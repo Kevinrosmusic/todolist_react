@@ -8,7 +8,7 @@ import { deleteList, startLoadingListById } from "../../store/lists/thunks";
 export const SideBar = ({ drawerWidth = 240 }) => {
     const dispatch = useDispatch();
     const { lists } = useSelector((state) => state.toDoList);
-    const { uid } = useSelector((state) => state.auth.user);
+    const { uid, name } = useSelector((state) => state.auth.user);
 
     const handleSelectList = (id) => {
         startTransition(() => {
@@ -62,7 +62,7 @@ export const SideBar = ({ drawerWidth = 240 }) => {
             >
                 <Toolbar>
                     <Typography variant="h6" color="white" noWrap component="div">
-                        Kevin Palomino
+                        {name}
                     </Typography>
                 </Toolbar>
                 <Divider color="white" />
