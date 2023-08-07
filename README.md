@@ -1,4 +1,4 @@
-# :star: backend_todolist# IcelandTest v-2
+# :star: To Do List
 
 > This is the same icelandTest project but was now built on pure HTML, CSS, and JavaScript. 100% responsive
 
@@ -12,11 +12,21 @@
 
  - Animated.css
 
+ - Reactjs 18
+
+ - Redux toolkits
+
+ - Material UI
+
+ - Sweetalert2
+
+ - Toastify
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps:
 
-- On the project, GitHub page, navigate to the  [main page of the repository](https://github.com/Kevinrosmusic/IcelandTest-2.git)
+- On the project, GitHub page, navigate to the  [main page of the repository](https://github.com/Kevinrosmusic/todolist_react.git)
 
 - Click on a button named `code`
 
@@ -28,13 +38,15 @@ To get a local copy up and running follow these simple example steps:
 
 - Type `git clone` , and then paste the URL you copied in Step 3.<br>
 
-  `$ git clone https://github.com/Kevinrosmusic/IcelandTest.git-2` <em>Press Enter key</em><br>
+  `$ git clone https://github.com/Kevinrosmusic/todolist_react.git` <em>Press Enter key</em><br>
 
 - Your local copy will be created.
 
 - Please note that you must have Git installed on your PC, this can be done [here](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
 
-- After you get the project aiming to the desired directory, open index.html file. 
+- una vez clonado el repositorio usar comando yarn install apra la instalacion de dependencias
+
+- instaladas las dependencias proderemos a usar el comando yarn dev para dar inicio a la app
 
 ## Authors
 
