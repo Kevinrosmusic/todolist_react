@@ -27,7 +27,9 @@ export const LoginPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(startLoadingLogin(email, password));
+       startTransition(() => {
+            dispatch(startLoadingLogin(email, password));
+        });
     };
 
     return (
