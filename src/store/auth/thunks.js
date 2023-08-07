@@ -19,7 +19,7 @@ export const startLoadingLogin = (email, password) => {
             })
             .catch((error) => {
                 dispatch(setLogout());
-                toast.error("Ha ocurrido un error inesperado porfavor intente mas tarde", {
+                toast.error(error.response.data.msg, {
                     position: "top-right",
                     autoClose: 5000,
                     hideProgressBar: false,
