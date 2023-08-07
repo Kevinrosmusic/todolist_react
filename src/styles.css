@@ -1,0 +1,29 @@
+.box-shadow {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    display: none;
+    padding: 0px !important;
+}
+
+.img-container {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+}
+
+.img-container .icon {
+    position: absolute !important;
+    bottom: 1.3em !important;
+    right: 1.3em;
+    background-color: red;
+    border-radius: 1.5em;
+    color: white;
+    text-transform: uppercase;
+}
+
+.img-container:hover .icon {
+    display: block;
+}
