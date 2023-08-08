@@ -16,7 +16,7 @@ export const HomePage = () => {
         <AppLayout>
             {active ? <ToDoListSelected todolist={active} /> : <NothingSelected />}
 
-            <Tooltip title="Crear nueva Lista" placement="left">
+            <Tooltip title="Create new To do list" placement="left">
                 <IconButton
                     size="large"
                     sx={{

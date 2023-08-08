@@ -3,7 +3,7 @@ import { FormControl, IconButton, InputAdornment, InputLabel, Link, OutlinedInpu
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
-import { useState, startTransition} from "react";
+import { startTransition, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link as RouterLink } from "react-router-dom";
 import { useForm } from "../../hooks/useFrom";
@@ -27,22 +27,22 @@ export const LoginPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-       startTransition(() => {
+        startTransition(() => {
             dispatch(startLoadingLogin(email, password));
         });
     };
 
     return (
-        <AuthLayout title="Iniciar Sesión">
+        <AuthLayout title="Log In">
             <form onSubmit={handleSubmit} className="animate__animated animate__fadeIn animate__faster">
                 <Grid container spacing={0}>
                     <Grid item xs={12}>
                         <TextField
                             id="user"
-                            label="Correo"
+                            label="Email"
                             type="email"
                             name="email"
-                            placeholder="ejemplo@ejemplo.com"
+                            placeholder="example@example.com"
                             size="small"
                             fullWidth
                             value={email}
@@ -52,7 +52,7 @@ export const LoginPage = () => {
                     </Grid>
                     <Grid item xs={12}>
                         <FormControl sx={{ mt: 3 }} variant="outlined" fullWidth size="small">
-                            <InputLabel htmlFor="outlined-adornment-password">Contraseña</InputLabel>
+                            <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                             <OutlinedInput
                                 id="outlined-adornment-password"
                                 type={showPassword ? "text" : "password"}
@@ -63,23 +63,23 @@ export const LoginPage = () => {
                                         </IconButton>
                                     </InputAdornment>
                                 }
-                                label="Contraseña"
+                                label="Password"
                                 value={password}
                                 onChange={handleInputChange}
                                 name="password"
                             />
                         </FormControl>
                     </Grid>
-                    <Grid container spacing={2} sx={{ mt: 2 }}>
+                    <Grid container spacing={0} sx={{ mt: 2 }}>
                         <Grid item xs={12} sm={12}>
                             <Button variant="contained" color="primary" fullWidth type="submit">
-                                Ingresar
+                                Sign in
                             </Button>
                         </Grid>
                     </Grid>
                     <Grid container direction="row" justifyContent="end" sx={{ mt: 2, fontSize: "15px" }}>
                         <Link component={RouterLink} color="inherit" to="/auth/register">
-                            Crear una Cuenta
+                            Sign up
                         </Link>
                     </Grid>
                 </Grid>

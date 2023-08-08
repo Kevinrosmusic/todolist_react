@@ -3,22 +3,24 @@ import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { setLogout } from "../../store/auth/authSlice";
 
-export const Navbar = ({ drawerWidth }) => {
+export const Navbar = ({ drawerWidth, setOpen }) => {
     const dispatch = useDispatch();
 
     const handleLogout = () => {
         dispatch(setLogout());
         localStorage.clear();
     };
+
+    const handleOpen = () => setOpen(true);
     return (
         <AppBar
             position="fixed"
             sx={{
                 width: {
-                    sm: `calc(100% - ${drawerWidth}px)`,
+                    md: `calc(100% - ${drawerWidth}px)`,
                 },
                 ml: {
-                    sm: `${drawerWidth}px`,
+                    md: `${drawerWidth}px`,
                 },
             }}
         >
@@ -30,9 +32,11 @@ export const Navbar = ({ drawerWidth }) => {
                         mr: 2,
                         display: {
                             xs: "block",
-                            sm: "none",
+                            sm: "block",
+                            md: "none",
                         },
                     }}
+                    onClick={handleOpen}
                 >
                     <MenuOutlined />
                 </IconButton>

@@ -82,14 +82,14 @@ export const RegisterPage = () => {
     };
 
     return (
-        <AuthLayout title="Crear nueva cuenta">
-            {showPasswordError.password && showPasswordError.confirmPassword && <Alert severity="error">Contraseñas no coinciden</Alert>}
+        <AuthLayout title="Sign Up">
+            {showPasswordError.password && showPasswordError.confirmPassword && <Alert severity="error">Passwords do not match</Alert>}
             <form onSubmit={handleSubmit} className="animate__animated animate__fadeIn animate__faster">
                 <Grid container spacing={0}>
                     <Grid item xs={12}>
                         <TextField
                             id="name"
-                            label="Nombre"
+                            label="Name"
                             type="text"
                             name="name"
                             placeholder="Kevin Palomino"
@@ -106,10 +106,10 @@ export const RegisterPage = () => {
                     <Grid item xs={12}>
                         <TextField
                             id="user"
-                            label="Correo"
+                            label="Email"
                             name="email"
                             type="email"
-                            placeholder="ejemplo@ejemplo.com"
+                            placeholder="example@example.com"
                             value={email}
                             size="small"
                             fullWidth
@@ -122,7 +122,7 @@ export const RegisterPage = () => {
                     <Grid item xs={12}>
                         <FormControl sx={{ mt: 3 }} variant="outlined" fullWidth size="small">
                             <InputLabel htmlFor="outlined-adornment-password" error={showErrors.password}>
-                                Contraseña
+                                Password
                             </InputLabel>
                             <OutlinedInput
                                 id="outlined-adornment-password"
@@ -134,7 +134,7 @@ export const RegisterPage = () => {
                                         </IconButton>
                                     </InputAdornment>
                                 }
-                                label="Contraseña"
+                                label="Password"
                                 value={password}
                                 onChange={handleInputChange}
                                 name="password"
@@ -146,7 +146,7 @@ export const RegisterPage = () => {
                     <Grid item xs={12}>
                         <FormControl sx={{ mt: 3 }} variant="outlined" fullWidth size="small">
                             <InputLabel htmlFor="outlined-adornment-password" error={showErrors.confirmPassword}>
-                                Repite Contraseña
+                                Repeat Password
                             </InputLabel>
                             <OutlinedInput
                                 id="outlined-adornment-password"
@@ -158,7 +158,7 @@ export const RegisterPage = () => {
                                         </IconButton>
                                     </InputAdornment>
                                 }
-                                label="Repite Contraseña"
+                                label="Repeat Password"
                                 value={confirmPassword}
                                 onChange={handleInputChange}
                                 name="confirmPassword"
@@ -167,16 +167,16 @@ export const RegisterPage = () => {
                         </FormControl>
                         {showErrors.confirmPassword && <FormHelperText sx={{ mt: 1, color: "red" }}>{showErrors.confirmPassword.msg}</FormHelperText>}
                     </Grid>
-                    <Grid container spacing={2} sx={{ mt: 2 }}>
+                    <Grid container spacing={0} sx={{ mt: 2 }}>
                         <Grid item xs={12} sm={12}>
                             <Button variant="contained" color="primary" fullWidth type="submit">
-                                Registrarse
+                                Sing Up
                             </Button>
                         </Grid>
                     </Grid>
                     <Grid container direction="row" justifyContent="end" sx={{ mt: 2, fontSize: "15px" }}>
                         <Link component={RouterLink} color="inherit" to="/auth/login">
-                            Regresar
+                            Back
                         </Link>
                     </Grid>
                 </Grid>

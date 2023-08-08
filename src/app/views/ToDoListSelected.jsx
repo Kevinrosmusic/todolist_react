@@ -12,7 +12,9 @@ export const ToDoListSelected = ({ todolist }) => {
         msg: "",
     });
 
-    const [formValues, handleInputChange] = useForm();
+    const [formValues, handleInputChange] = useForm({
+        newTask: "",
+    });
     const { newTask } = formValues;
 
     const handleSubmit = (e) => {
@@ -47,10 +49,10 @@ export const ToDoListSelected = ({ todolist }) => {
                     {title}
                 </Typography>
             </Grid>
-            <Grid item xs={8}>
+            <Grid item xs={12} sm={8}>
                 {tasks.length === 0 ? (
                     <Alert severity="info" className="animate__animated animate__fadeIn animate__faster">
-                        Usted no posee tareas creadas aun!
+                        You do not have tasks created yet!
                     </Alert>
                 ) : (
                     tasks.map((task) => (
@@ -72,7 +74,7 @@ export const ToDoListSelected = ({ todolist }) => {
                     ))
                 )}
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={12} sm={4}>
                 <Grid item xs={12}>
                     <Paper sx={{ p: 3 }}>
                         <form onSubmit={handleSubmit}>
@@ -83,7 +85,7 @@ export const ToDoListSelected = ({ todolist }) => {
                                     mb: 2,
                                 }}
                             >
-                                Agregar nueva Tarea
+                                New Task
                             </Typography>
                             <TextField id="outlined-basic" label="Tarea" value={newTask} name="newTask" size="small" fullWidth onChange={handleInputChange} error={error.error} />
                             {error && (
@@ -93,7 +95,7 @@ export const ToDoListSelected = ({ todolist }) => {
                             )}
                             <Box sx={{ mt: 2, display: "flex", direction: "row", justifyContent: "end" }}>
                                 <Button variant="contained" color="primary" size="small" type="submit">
-                                    Agregar
+                                    Add
                                 </Button>
                             </Box>
                         </form>

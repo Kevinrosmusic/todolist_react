@@ -25,18 +25,19 @@ export const Modals = ({ setOpen, open }) => {
         msg: "",
     });
 
-    const [formValues, handleInputChange] = useForm();
+    const [formValues, handleInputChange] = useForm({
+        name: "",
+    });
     const { name } = formValues;
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(name);
+
         if (name == undefined || name == "") {
-            console.log("error");
             startTransition(() => {
                 setError({
                     error: true,
-                    msg: "El nombre de la lista no puede estar vacio",
+                    msg: "The list name cannot be empty.",
                 });
             });
         } else {
@@ -50,7 +51,10 @@ export const Modals = ({ setOpen, open }) => {
         <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
             <form onSubmit={handleSubmit}>
                 <Box sx={style}>
-                    <TextField id="todolist" label="Nombre de la To Do List" value={name} name="name" onChange={handleInputChange} size="small" fullWidth error={error.error} />
+                    <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ mb: 2 }}>
+                        Create new To Do List
+                    </Typography>
+                    <TextField id="todolist" label="Title To Do List" value={name} name="name" onChange={handleInputChange} size="small" fullWidth error={error.error} />
                     {error && (
                         <Typography color="error" sx={{ mt: 1, fontSize: "13px" }}>
                             {error.msg}
@@ -64,7 +68,7 @@ export const Modals = ({ setOpen, open }) => {
                         }}
                     >
                         <Button variant="contained" size="small" color="primary" type="submit">
-                            Crear Lista
+                            Create
                         </Button>
                     </Box>
                 </Box>

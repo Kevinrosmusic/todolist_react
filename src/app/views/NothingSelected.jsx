@@ -20,7 +20,7 @@ export const NothingSelected = () => {
             </Grid>
             <Grid item xs={12}>
                 <Typography variant="h5" color="white">
-                    Selecciona o crea un To Do List
+                    Select or create a To Do List
                 </Typography>
             </Grid>
         </Grid>

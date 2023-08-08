@@ -3,7 +3,7 @@
 }
 
 .icon {
-    display: none;
+    display: block;
     padding: 0px !important;
 }
 
@@ -24,6 +24,6 @@
     text-transform: uppercase;
 }
 
-.img-container:hover .icon {
+/* .img-container:hover .icon {
     display: block;
-}
+} */

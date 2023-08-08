@@ -1,7 +1,8 @@
 import { Box, Toolbar } from "@mui/material";
-import { startTransition, useEffect } from "react";
+import { Suspense, startTransition, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { startLoadingLists } from "../../store/lists/thunks";
+import { Spinner } from "../../ui/components/spinner/Spinner";
 import { Navbar, SideBar } from "../components";
 
 const drawerWidth = 280;
@@ -9,6 +10,7 @@ const drawerWidth = 280;
 export const AppLayout = ({ children }) => {
     const dispatch = useDispatch();
     const { uid } = useSelector((state) => state.auth.user);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         startTransition(() => {
@@ -17,12 +19,12 @@ export const AppLayout = ({ children }) => {
     }, [dispatch, uid]);
 
     return (
-        <Box sx={{ display: "flex" }} className="animate__animated animate__ animate__faster">
-            <Navbar drawerWidth={drawerWidth} />
-            <SideBar drawerWidth={drawerWidth} />
+        <Box sx={{ display: "flex" }}>
+            <Navbar drawerWidth={drawerWidth} setOpen={setOpen} />
+            <SideBar drawerWidth={drawerWidth} open={open} setOpen={setOpen} />
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <Toolbar />
-                {children}
+                <Suspense fallback={<Spinner />}>{children}</Suspense>
             </Box>
         </Box>
     );

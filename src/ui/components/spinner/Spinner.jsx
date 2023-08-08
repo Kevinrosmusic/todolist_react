@@ -14,7 +14,7 @@ export const Spinner = () => {
                 padding: 4,
             }}
         >
-            <Grid item direction="row" justifyContent="center">
+            <Grid item>
                 <CircularProgress sx={{ color: "white" }} />
             </Grid>
         </Grid>
